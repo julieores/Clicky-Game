@@ -5,13 +5,49 @@ import './CardContainer.css';
 
 const travelScenes = [
     {
-        name: "beach",
+        name: "adventure",
         img: './assets/images/adventure'
     },
     {
-        name: "jungle",
-        img : './assets/images/jungle'
-    }
+        name: "alps",
+        img : './assets/images/alps'
+    },
+    {
+        name: "apartment",
+        img : './assets/images/apartment'
+    },
+    {
+        name: "australia",
+        img : './assets/images/australia'
+    },
+    {
+        name: "bay",
+        img : './assets/images/bay'
+    },
+    {
+        name: "beach",
+        img : './assets/images/beach'
+    },
+    {
+        name: "boat",
+        img : './assets/images/boat'
+    },
+    {
+        name: "camera",
+        img : './assets/images/camera'
+    },
+    {
+        name: "paris",
+        img : './assets/images/paris'
+    },
+    {
+        name: "phonebooth",
+        img : './assets/images/phonebooth'
+    },
+
+
+
+
 ]
 
 class CardContainer extends React.Component {
