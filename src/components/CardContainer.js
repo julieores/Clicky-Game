@@ -4,16 +4,15 @@ import Card from "./Cards";
 import CardContainer from "./CardContainer";
 
 
-const a
-const b
+// const a
+// const b
 
 const shuffleArray = arr => (
     arr
-        .map(a => [math.random(), a])
-        .sort((a, b => a[0] - b[0])
-            .map(a => a[1])
-
-        ))
+      .map(a => [Math.random(), a])
+      .sort((a, b) => a[0] - b[0])
+      .map(a => a[1]) 
+);
 
 
 const travelScenes = [
@@ -73,8 +72,8 @@ const travelScenes = [
     },
 
 ]
+export default class Cards extends Component {
 
-export default class CardContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -116,3 +115,4 @@ export default class CardContainer extends Component {
         }
     }
 }
+

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
+
 import logo from './logo.svg';
-import './App.css';
+
 import Header from './components/Header';
-
 import CardContainer from './components/CardContainer';
-
-
 import Cards from './components/Cards';
+
+import './App.css';
 
 class App extends Component {
 
