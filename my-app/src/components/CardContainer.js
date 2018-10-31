@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Card from "./Cards";
-import CardContainer from "./CardContainer";
+import Card from './Cards';
+import CardContainer from './CardContainer';
 
 
 // const a
@@ -9,65 +9,65 @@ import CardContainer from "./CardContainer";
 
 const shuffleArray = arr => (
     arr
-      .map(a => [Math.random(), a])
-      .sort((a, b) => a[0] - b[0])
-      .map(a => a[1]) 
+        .map(a => [Math.random(), a])
+        .sort((a, b) => a[0] - b[0])
+        .map(a => a[1])
 );
 
 
 const travelScenes = [
     {
 
-        name: "adventure",
-        img: "img/250x180/adventure.jpg",
+        name: 'adventure',
+        img: 'img/250x180/adventure.jpg',
         clicked: false
     },
     {
 
-        name: "alps",
-        img: "img/250x180/alps.jpg",
+        name: 'alps',
+        img: 'img/250x180/alps.jpg',
         clicked: false
     },
     {
 
-        name: "apartment",
-        img: "img/250x180/apartment.jpg",
+        name: 'apartment',
+        img: 'img/250x180/apartment.jpg',
         clicked: false
     },
     {
 
-        name: "australia",
-        img: "img/250x180/australia.jpg",
+        name: 'australia',
+        img: 'img/250x180/australia.jpg',
         clicked: false
     },
     {
-        name: "bay",
-        img: "img/250x180/bay.jpg",
+        name: 'bay',
+        img: 'img/250x180/bay.jpg',
         clicked: false
     },
     {
-        name: "beach",
-        img: "img/250x180/beach.jpg",
+        name: 'beach',
+        img: 'img/250x180/beach.jpg',
         clicked: false
     },
     {
-        name: "boat",
-        img: "img/250x180/boat.jpg",
+        name: 'boat',
+        img: 'img/250x180/boat.jpg',
         clicked: false
     },
     {
-        name: "camera",
-        img: "img/250x180/camera.jpg",
+        name: 'camera',
+        img: 'img/250x180/camera.jpg',
         clicked: false
     },
     {
-        name: "paris",
-        img: "img/250x180/paris.jpg",
+        name: 'paris',
+        img: 'img/250x180/paris.jpg',
         clicked: false
     },
     {
-        name: "phonebooth",
-        img: "img/250x180/phonebooth.jpg",
+        name: 'phonebooth',
+        img: 'img/250x180/phonebooth.jpg',
         clicked: false
     },
 
@@ -80,14 +80,14 @@ export default class Cards extends Component {
             user: {
                 score: 0
             },
-            characters: shuffleArray( travelScenes )
+            characters: shuffleArray(travelScenes)
         };
     }
 
-    onCharacterClick = ( index ) =>{
-        if ( !this.state.characters[index].clicked ) {
+    onCharacterClick = (index) => {
+        if (!this.state.characters[index].clicked) {
             this.setState({
-                characters: shuffleArray(this.state.characters.map( (character, current) => {
+                characters: shuffleArray(this.state.characters.map((character, current) => {
                     return (current === index) ? { ...character, clicked: true } : character
 
                 })),

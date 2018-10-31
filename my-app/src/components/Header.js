@@ -1,14 +1,14 @@
 import React from 'react';
 import './Header.css';
 
+const Header = () => {
+    return (
+        <header className="App-header">
 
-function Header () {
-    return(
-        <div className="header">
             <h1>Scene Selection Clicky Game</h1>
-        </div>
+        </header>
     )
-}
+};
 
 
 export default Header;
