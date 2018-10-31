@@ -1,104 +1,114 @@
-import React from 'react';
+import React from "react";
 
-import Card from './Cards';
-import './CardContainer.css';
+import Card from "./Cards";
+import CardContainer from "./CardContainer";
+
+const shuffleArray = arr => (
+    arr
+        .map(a => [math.random(), a])
+        .sort((a, b => a[0] - b[0])
+            .map(a => a[1])
+
+        ))
+
 
 const travelScenes = [
     {
 
         name: "adventure",
-        img: "./assets/images/adventure"
+        img: "img/250x180/adventure.jpg",
+        clicked: false
     },
     {
 
         name: "alps",
-        img: "./assets/images/alps"
+        img: "img/250x180/alps.jpg",
+        clicked: false
     },
     {
 
         name: "apartment",
-        img: "./assets/images/apartment"
+        img: "img/250x180/apartment.jpg",
+        clicked: false
     },
     {
 
         name: "australia",
-        img: "./assets/images/australia"
+        img: "img/250x180/australia.jpg",
+        clicked: false
     },
     {
         name: "bay",
-        img: './assets/images/bay'
+        img: "img/250x180/bay.jpg",
+        clicked: false
     },
     {
         name: "beach",
-        img: './assets/images/beach'
+        img: "img/250x180/beach.jpg",
+        clicked: false
     },
     {
         name: "boat",
-        img: "./assets/images/boat"
+        img: "img/250x180/boat.jpg",
+        clicked: false
     },
     {
         name: "camera",
-        img: "./assets/images/camera"
+        img: "img/250x180/camera.jpg",
+        clicked: false
     },
     {
         name: "paris",
-        img: "./assets/images/paris"
+        img: "img/250x180/paris.jpg",
+        clicked: false
     },
     {
         name: "phonebooth",
-        img: "./assets/images/phonebooth"
+        img: "img/250x180/phonebooth.jpg",
+        clicked: false
     },
-
 
 ]
 
-class CardContainer extends React.Component {
+export default class CardContainer extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            user: {
+                score: 0
+            },
+            characters: shuffleArray( travelScenes )
+        };
     }
 
-    render() {
-        return (
-            <div className="cardContainer">
-                {
-                    travelScenes.map(e => {
-                        return <Card name={e.name} img={e.jpg} />
-                
-                        
-                    //    return <Card name={img src={require("./assets/images.alps.jpg") alt="" className="img-responsive" />
-                    })
-                
+    onCharacterClick = ( index ) =>{
+        if ( !this.state.characters[index].clicked ) {
+            this.setState({
+                characters: shuffleArray(this.state.characters.map( (character, current) => {
+                    return (current === index) ? { ...character, clicked: true } : character
+
+                })),
+
+                user: {
+                    ...this.state.user,
+                    score: this.state.user.score + 1
+
                 }
-            </div>
-        )
+            });
+
+
+
+        }
+
+        else {
+            this.setState({
+                characters: shuffleArray(this.state.characters.map(character => { return { ...character, clicked: false } })),
+                user: {
+                    ...this.state.user,
+                    score: 0
+                }
+
+            });
+        }
     }
 }
-
-
-export default CardContainer;
-
-// Testing Image Code
-// var Foo = React.createClass({
-//     render: function() {
-//      const images = ['a','b','c']
-//      const imagesElements = images.map( e => {
-//       return (
-//        <img src={`${e}.jpg`} />
-//       )
-//      });
-  
-//      return(
-//       <div>
-//        {imagesElements}
-//       </div>
-//      )
-//    }
-//   });
-  
-//   ReactDOM.render(
-//    <Foo name="bar" />,
-//    document.getElementById('container')
-//   );
-
-// On clicks for scoring functionality
