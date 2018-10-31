@@ -1,7 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
 
 import Card from "./Cards";
 import CardContainer from "./CardContainer";
+
+
+const a
+const b
 
 const shuffleArray = arr => (
     arr
